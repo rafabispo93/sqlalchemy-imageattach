@@ -751,10 +751,7 @@ class BaseImageSet(object):
             elif width < 1:
                 raise ValueError('width must be natural number, not ' +
                                  repr(width))
-            # find the same-but-already-generated thumbnail
-            for image in added:
-                if image.width == width:
-                    return image
+            
             if not transient:
                 q = query.filter_by(width=width)
                 try:
